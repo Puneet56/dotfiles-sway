@@ -1,0 +1,28 @@
+# Global defaults
+separator_block_width=15
+timeout=30
+
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=1
+color=#a6e3a1
+
+[cpu]
+command=~/.config/i3blocks/scripts/cpu.sh
+interval=5
+color=#f9e2af
+
+[memory]
+command=~/.config/i3blocks/scripts/memory.sh
+interval=10
+color=#caffbf
+
+[battery]
+command=~/.config/i3blocks/scripts/battery.sh
+interval=30
+color=#fab387
+
+[network]
+command=~/.config/i3blocks/scripts/network.sh
+interval=5
+color=#89b4fa
