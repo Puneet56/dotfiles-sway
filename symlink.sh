@@ -34,7 +34,7 @@ create_symlink "$DOTFILES_DIR/tmux/.tmux.conf.local" "$HOME/.tmux.conf.local"
 # create_symlink "$DOTFILES_DIR/keyd" "$CONFIG_DIR/keyd"
 # create_symlink "$DOTFILES_DIR/hypr" "$CONFIG_DIR/hypr"
 # create_symlink "$DOTFILES_DIR/waybar" "$CONFIG_DIR/waybar"
-# create_symlink "$DOTFILES_DIR/fuzzel" "$CONFIG_DIR/fuzzel"
+create_symlink "$DOTFILES_DIR/fuzzel" "$CONFIG_DIR/fuzzel"
 
 create_symlink "$DOTFILES_DIR/sway" "$CONFIG_DIR/sway"
 

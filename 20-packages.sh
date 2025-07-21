@@ -3,7 +3,7 @@
 set -xe
 
 sudo pacman -S --noconfirm \
-  git \
+  openssh \
   zip \
   unzip \
   firefox \
