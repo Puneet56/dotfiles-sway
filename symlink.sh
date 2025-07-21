@@ -26,7 +26,7 @@ create_symlink() {
 }
 
 # create_symlink "$DOTFILES_DIR/scripts" "$HOME/scripts"
-# create_symlink "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
+create_symlink "$DOTFILES_DIR/zsh/.zshrc" "$HOME/.zshrc"
 # create_symlink "$DOTFILES_DIR/zsh/.devrc.zsh" "$HOME/.devrc.zsh"
 create_symlink "$DOTFILES_DIR/tmux/.tmux.conf" "$HOME/.tmux.conf"
 create_symlink "$DOTFILES_DIR/tmux/.tmux.conf.local" "$HOME/.tmux.conf.local"
