@@ -17,4 +17,5 @@ sudo pacman -S --noconfirm \
   zsh \
   lazygit \
   ripgrep \
-  wl-clipboard
+  wl-clipboard \
+  github-cli
