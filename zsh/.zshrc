@@ -91,3 +91,12 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 export EDITOR=nvim
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/home/puneet/.opam/opam-init/init.zsh' ]] || source '/home/puneet/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration

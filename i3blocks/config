@@ -26,3 +26,13 @@ color=#fab387
 command=~/.config/i3blocks/scripts/network.sh
 interval=5
 color=#89b4fa
+
+[brightness]
+command=~/.config/i3blocks/scripts/brightness.sh
+interval=5
+color=#f2cdcd
+
+[volume]
+command=~/.config/i3blocks/scripts/volume.sh
+interval=5
+color=#c3e88d
