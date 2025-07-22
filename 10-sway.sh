@@ -24,7 +24,8 @@ sudo pacman -S --noconfirm \
   noto-fonts-emoji \
   xorg-xwayland \
   brightnessctl \
-  git
+  git \
+  libnotify
 
 # enable network manager service
 sudo systemctl enable --now NetworkManager

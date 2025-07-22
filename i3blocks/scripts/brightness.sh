@@ -14,8 +14,8 @@ fi
 #   BLOCK_BUTTON=5 → scroll down
 STEP=5%
 case "$BLOCK_BUTTON" in
-4) brightnessctl set +"$STEP" >/dev/null ;;
-5) brightnessctl set "$STEP"-% >/dev/null ;;
+5) brightnessctl set +"$STEP" >/dev/null ;;
+4) brightnessctl set "$STEP"-% >/dev/null ;;
 esac
 
 # now read current & max

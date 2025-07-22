@@ -41,6 +41,7 @@ create_symlink "$DOTFILES_DIR/i3blocks" "$CONFIG_DIR/i3blocks"
 
 create_symlink "$DOTFILES_DIR/kitty" "$CONFIG_DIR/kitty"
 create_symlink "$DOTFILES_DIR/nvim" "$CONFIG_DIR/nvim"
+create_symlink "$DOTFILES_DIR/mako" "$CONFIG_DIR/mako"
 create_symlink "$DOTFILES_DIR/scripts" "$HOME/scripts"
 
-# source "$HOME/.zshrc"
+source "$HOME/.zshrc"

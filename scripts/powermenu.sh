@@ -15,11 +15,12 @@ case "$choice" in
   systemctl reboot
   ;;
 "🚪 Logout")
-  hyprctl dispatch exit
+  # hyprctl dispatch exit
   # Replace with your actual logout command
   # Examples for different window managers/desktop environments:
   # Openbox: openbox --exit
-  # i3/Sway: i3-msg exit or swaymsg exit
+  # i3/Sway: i3-msg exit or
+  swaymsg exit
   # GNOME: gnome-session-quit
   # KDE: qdbus org.kde.ksmserver /KSMServer logout 0 0 0
   # Add the command that applies to your setup

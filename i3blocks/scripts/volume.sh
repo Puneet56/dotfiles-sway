@@ -5,8 +5,8 @@
 # If you click or scroll, adjust first:
 case "$BLOCK_BUTTON" in
 1) pactl set-sink-mute @DEFAULT_SINK@ toggle ;;
-4) pactl set-sink-volume @DEFAULT_SINK@ +2% ;;
-5) pactl set-sink-volume @DEFAULT_SINK@ -2% ;;
+5) pactl set-sink-volume @DEFAULT_SINK@ +2% ;;
+4) pactl set-sink-volume @DEFAULT_SINK@ -2% ;;
 esac
 
 # Now fetch the current volume and mute state:

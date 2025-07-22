@@ -1,0 +1,41 @@
+# ~/.config/mako/config
+
+# Global settings
+font=monospace 12
+format=%s\n%b
+sort=-time
+icons=1
+actions=1
+history=1
+markup=1
+max-history=100
+
+# Appearance
+width=300
+height=100
+padding=10
+border-size=2
+border-radius=5
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#89b4fa
+progress-color=over #f38ba8
+
+# Positioning (anchored to top-right by default)
+anchor=top-right
+layer=overlay
+output=*
+
+# Grouping and urgency levels
+# [grouped]
+# max-visible=3
+
+[urgency=low]
+border-color=#f9e2af
+
+[urgency=normal]
+border-color=#89b4fa
+
+[urgency=high]
+border-color=#f38ba8
+on-notify=exec notify-send "High urgency notification!"
