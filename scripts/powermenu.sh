@@ -1,13 +1,16 @@
 #!/bin/bash
 
 # Power menu options with emojis
-options="❌ Shutdown\n🔄 Reboot\n🚪 Logout"
+options="🔒 Lock\n❌ Shutdown\n🔄 Reboot\n🚪 Logout"
 
 # Use Fuzzel to display the options
 choice=$(echo -e "$options" | fuzzel --dmenu)
 
 # Perform the selected action
 case "$choice" in
+"🔒 Lock")
+  swaylock -f -c 000000
+  ;;
 "❌ Shutdown")
   systemctl poweroff
   ;;

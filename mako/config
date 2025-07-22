@@ -9,6 +9,7 @@ actions=1
 history=1
 markup=1
 max-history=100
+default-timeout=5000
 
 # Appearance
 width=300
