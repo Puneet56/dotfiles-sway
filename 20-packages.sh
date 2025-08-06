@@ -9,6 +9,7 @@ sudo pacman -S --noconfirm \
   firefox \
   vim \
   neovim \
+  luarocks \
   zoxide \
   fzf \
   fd \
@@ -18,4 +19,7 @@ sudo pacman -S --noconfirm \
   lazygit \
   ripgrep \
   wl-clipboard \
+  github-cli \
+  kitty \
+  exa \
   github-cli

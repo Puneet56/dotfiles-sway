@@ -15,6 +15,8 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 set $term kitty
+
+set $browser firefox
 # Your preferred application launcher
 set $menu fuzzel
 
@@ -71,6 +73,9 @@ exec swayidle -w \
 #
     # Start a terminal
     bindsym $mod+Return exec $term
+
+    # Start browser
+    bindsym $mod+b exec $browser
 
     # Kill focused window
     bindsym $mod+q kill
@@ -151,7 +156,7 @@ exec swayidle -w \
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
+    bindsym $mod+shift+v splith
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles

@@ -10,9 +10,6 @@ sudo pacman -S --noconfirm \
   swaybg \
   swaylock \
   swayidle \
-  wmenu \
-  wofi \
-  foot \
   waybar \
   mako \
   grim \
@@ -25,7 +22,13 @@ sudo pacman -S --noconfirm \
   xorg-xwayland \
   brightnessctl \
   git \
-  libnotify
+  libnotify \
+  fuzzel \
+  i3blocks \
+  iw \
+  awesome-terminal-fonts \
+  adobe-source-code-pro-fonts \
+  less
 
 # enable network manager service
 sudo systemctl enable --now NetworkManager
