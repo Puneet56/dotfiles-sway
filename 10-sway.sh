@@ -28,7 +28,8 @@ sudo pacman -S --noconfirm \
   iw \
   awesome-terminal-fonts \
   adobe-source-code-pro-fonts \
-  less
+  less \
+  jq
 
 # enable network manager service
 sudo systemctl enable --now NetworkManager
