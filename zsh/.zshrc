@@ -79,6 +79,7 @@ eval "$(zoxide init --cmd cd zsh)"
 
 
 add_to_path "$HOME/scripts"
+add_to_path "$HOME/opt/zen"
 
 # rust cargo
 [ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
@@ -91,6 +92,10 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 export EDITOR=nvim
+
+export NATIVE_WAYLAND=1
+export OZONE_PLATFORM=wayland
+export ELECTRON_OZONE_PLATFORM_HINT=wayland
 
 
 # BEGIN opam configuration
