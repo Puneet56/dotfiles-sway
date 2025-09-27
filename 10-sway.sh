@@ -29,7 +29,15 @@ sudo pacman -S --noconfirm \
   awesome-terminal-fonts \
   adobe-source-code-pro-fonts \
   less \
-  jq
+  jq \
+  power-profiles-daemon \
+  python-gobject
 
 # enable network manager service
 sudo systemctl enable --now NetworkManager
+
+# swayosd libinput backend
+sudo systemctl enable --now swayosd-libinput-backend.service
+
+# power-profiles-daemon
+sudo systemctl enable --now power-profiles-daemon.service

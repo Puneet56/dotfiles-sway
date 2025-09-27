@@ -37,6 +37,11 @@ command=~/.config/i3blocks/scripts/volume.sh
 interval=5
 color=#c3e88d
 
+[powerprofile]
+command=~/.config/i3blocks/scripts/powerprofile.sh
+interval=5
+color=#f7768e
+
 [power]
 command=~/.config/i3blocks/scripts/power.sh
 interval=5

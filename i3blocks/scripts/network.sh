@@ -23,8 +23,10 @@ if [[ -z $ssid ]]; then
 fi
 
 # get IPv4 address
-ipaddr=$(ip -4 addr show dev "$iface" |
-  awk '/inet/ { sub(/\/.*/, "", $2); print $2 }')
-
+# ipaddr=$(ip -4 addr show dev "$iface" |
+#   awk '/inet/ { sub(/\/.*/, "", $2); print $2 }')
+#
 # final output: Wi-Fi icon, SSID, IP
-echo " ${ssid} ${ipaddr}"
+# echo " ${ssid} ${ipaddr}"
+
+echo " ${ssid}"
