@@ -45,7 +45,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+b exec $browser
 bindsym $mod+q kill
 bindsym $mod+d exec $menu
-bindsym $mod+o exec $notes
+bindsym $mod+n exec $notes
 
 floating_modifier $mod normal
 
@@ -100,7 +100,7 @@ bindsym $mod+v splitv
 bindsym $mod+s layout stacking
 bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
-bindsym $mod+f fullscreen
+bindsym $mod+shift+f fullscreen
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
