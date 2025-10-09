@@ -10,7 +10,7 @@ exec swayosd-server
 
 input type:touchpad {
     dwt enabled
-    tap false
+    tap true
     natural_scroll enabled
     middle_emulation enabled
 }
@@ -19,7 +19,7 @@ input type:keyboard {
     xkb_layout "eu"
     repeat_rate 30
     repeat_delay 300
-    xkb_options ctrl:nocaps
+    xkb_options "ctrl:nocaps,compose:ralt"
 }
 
 # Logo key. Use Mod1 for Alt.
@@ -133,7 +133,8 @@ bindsym XF86AudioMicMute exec swayosd-client --input-volume mute-toggle
 bindsym XF86MonBrightnessUp exec swayosd-client --brightness raise
 bindsym XF86MonBrightnessDown exec swayosd-client --brightness lower
 
-bindsym Print exec grim
+bindsym Print exec ~/scripts/screenshot.sh area
+bindsym Shift+Print exec ~/scripts/screenshot.sh full
 
 bar {
     font pango:monospace 10
@@ -150,5 +151,6 @@ bar {
 }
 
 exec_always mako
+exec_always syncthing --no-browser
 
 include /etc/sway/config.d/*

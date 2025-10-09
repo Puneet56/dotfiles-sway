@@ -22,4 +22,6 @@ sudo pacman -S --noconfirm \
   github-cli \
   kitty \
   exa \
-  github-cli
+  github-cli \
+  btop \
+  obsidian

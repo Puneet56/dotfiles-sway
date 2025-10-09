@@ -97,17 +97,4 @@ export NATIVE_WAYLAND=1
 export OZONE_PLATFORM=wayland
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
 
-
-# BEGIN opam configuration
-# This is useful if you're using opam as it adds:
-#   - the correct directories to the PATH
-#   - auto-completion for the opam binary
-# This section can be safely removed at any time if needed.
-[[ ! -r '/home/puneet/.opam/opam-init/init.zsh' ]] || source '/home/puneet/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
-# END opam configuration
-
-## [Completion]
-## Completion scripts setup. Remove the following line to uninstall
-[[ -f /home/puneet/.dart-cli-completion/zsh-config.zsh ]] && . /home/puneet/.dart-cli-completion/zsh-config.zsh || true
-## [/Completion]
-
+export XCOMPOSEFILE=~/.XCompose

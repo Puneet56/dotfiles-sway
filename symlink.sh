@@ -43,5 +43,6 @@ create_symlink "$DOTFILES_DIR/kitty" "$CONFIG_DIR/kitty"
 create_symlink "$DOTFILES_DIR/nvim" "$CONFIG_DIR/nvim"
 create_symlink "$DOTFILES_DIR/mako" "$CONFIG_DIR/mako"
 create_symlink "$DOTFILES_DIR/scripts" "$HOME/scripts"
+create_symlink "$DOTFILES_DIR/XCompose" "$HOME/.XCompose"
 
 source "$HOME/.zshrc"

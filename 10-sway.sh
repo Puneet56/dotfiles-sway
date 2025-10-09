@@ -32,7 +32,6 @@ sudo pacman -S --noconfirm \
   jq \
   power-profiles-daemon \
   python-gobject \
-  btop \
   swayosd
 
 # enable network manager service
