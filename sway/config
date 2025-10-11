@@ -1,20 +1,26 @@
+### ===========================
+###  Sway Configuration
+### ===========================
+
+# === Display / Output Settings ===
 output * bg ~/dotfiles/wallpapers/Backyard.png fill
 output eDP-1 scale 1.7
 
+# === Idle, Lock & Power Management ===
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
-         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f -c 000000'
+    timeout 300 'swaylock -f -c 000000' \
+    timeout 600 'swaymsg "output * power off"' \
+    resume 'swaymsg "output * power on"' \
+    before-sleep 'swaylock -f -c 000000'
 
-exec swayosd-server
 
+# === Input Configuration ===
 input type:touchpad {
     dwt enabled
     tap true
     natural_scroll enabled
     middle_emulation enabled
 }
-#
 input type:keyboard {
     xkb_layout "eu"
     repeat_rate 30
@@ -22,56 +28,65 @@ input type:keyboard {
     xkb_options "ctrl:nocaps,compose:ralt"
 }
 
-# Logo key. Use Mod1 for Alt.
+# === Variables ===
 set $mod Mod4
-# Home row direction keys, like vim
 set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
 set $term kitty
-
 set $browser google-chrome-stable --enable-features=TouchpadOverscrollHistoryNavigation
-# Your preferred application launcher
 set $menu fuzzel
-
 set $notes obsidian --enable-features=UseOzonePlatform --ozone-platform=wayland
 
-assign [class="Firefox"] 2
-assign [title="obsidian"] 8
+# === System Services ===
+exec swayosd-server
+exec_always mako
+exec_always syncthing --no-browser
+# Clipboard manager (CopyQ)
+# Try Wayland backend first, fallback to xcb if tray icon missing
+exec_always pkill copyq && env QT_QPA_PLATFORM=wayland copyq &
+bindsym $mod+c exec copyq toggle
+exec_always copyq config theme tokyonight
 
+# === Application Rules ===
+for_window [app_id="copyq"] floating enable, move position center
+for_window [app_id="TUI.float"] floating enable, resize set 1280 720, move position center
+
+# === Keybindings: Apps ===
 bindsym $mod+Return exec $term
 bindsym $mod+b exec $browser
-bindsym $mod+q kill
 bindsym $mod+d exec $menu
 bindsym $mod+n exec $notes
+bindsym $mod+q kill
+bindsym $mod+Shift+l exec ~/scripts/powermenu.sh
+bindsym $mod+m exec ~/scripts/change-mouse-mode.sh
+bindsym $mod+Shift+e exec swaynag -t warning -m \
+    'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' \
+    -B 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+v exec wtype -M ctrl -M shift v -m shift -m ctrl
 
+# === Window Management ===
 floating_modifier $mod normal
-
 bindsym $mod+Shift+c reload
 
-bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-
-bindsym $mod+Shift+l exec ~/scripts/powermenu.sh
-
-bindsym $mod+m exec ~/scripts/change-mouse-mode.sh
-
+# Focus
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
-
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
+# Move containers
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+# Workspaces
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
 bindsym $mod+3 workspace number 3
@@ -82,21 +97,22 @@ bindsym $mod+7 workspace number 7
 bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
+
 # Move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace number 1
-bindsym $mod+Shift+2 move container to workspace number 2
-bindsym $mod+Shift+3 move container to workspace number 3
-bindsym $mod+Shift+4 move container to workspace number 4
-bindsym $mod+Shift+5 move container to workspace number 5
-bindsym $mod+Shift+6 move container to workspace number 6
-bindsym $mod+Shift+7 move container to workspace number 7
-bindsym $mod+Shift+8 move container to workspace number 8
-bindsym $mod+Shift+9 move container to workspace number 9
-bindsym $mod+Shift+0 move container to workspace number 10
+bindsym $mod+Shift+1 move container to workspace number 1, workspace 1
+bindsym $mod+Shift+2 move container to workspace number 2, workspace 2
+bindsym $mod+Shift+3 move container to workspace number 3, workspace 3
+bindsym $mod+Shift+4 move container to workspace number 4, workspace 4
+bindsym $mod+Shift+5 move container to workspace number 5, workspace 5
+bindsym $mod+Shift+6 move container to workspace number 6, workspace 6
+bindsym $mod+Shift+7 move container to workspace number 7, workspace 7
+bindsym $mod+Shift+8 move container to workspace number 8, workspace 8
+bindsym $mod+Shift+9 move container to workspace number 9, workspace 9
+bindsym $mod+Shift+0 move container to workspace number 10, workspace 10
 
-bindsym $mod+shift+v splith
-bindsym $mod+v splitv
-
+# Layouts
+bindsym $mod+shift+v splitv
+bindsym $mod+shift+h splith
 bindsym $mod+s layout stacking
 bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
@@ -105,52 +121,52 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
+# Scratchpad
 bindsym $mod+Shift+minus move scratchpad
-
 bindsym $mod+minus scratchpad show
 
+# Resize Mode
 mode "resize" {
     bindsym $left resize shrink width 10px
     bindsym $down resize grow height 10px
     bindsym $up resize shrink height 10px
     bindsym $right resize grow width 10px
-
     bindsym Left resize shrink width 10px
     bindsym Down resize grow height 10px
     bindsym Up resize shrink height 10px
     bindsym Right resize grow width 10px
-
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
 
+# === Media Keys ===
 bindsym XF86AudioRaiseVolume exec swayosd-client --output-volume raise
-bindsym XF86AudioLowerVolume exec  swayosd-client --output-volume lower
+bindsym XF86AudioLowerVolume exec swayosd-client --output-volume lower
 bindsym XF86AudioMute exec swayosd-client --output-volume mute-toggle
 bindsym XF86AudioMicMute exec swayosd-client --input-volume mute-toggle
-
 bindsym XF86MonBrightnessUp exec swayosd-client --brightness raise
 bindsym XF86MonBrightnessDown exec swayosd-client --brightness lower
 
+# === Screenshots ===
 bindsym Print exec ~/scripts/screenshot.sh area
 bindsym Shift+Print exec ~/scripts/screenshot.sh full
 
+# === Bar ===
 bar {
     font pango:monospace 10
     position top
     colors {
         background #1e1e2e
-        statusline  #cdd6f4
-        separator   #313244
-        # focused_workspace  #89b4fa #313244 #1e1e2e
+        statusline #cdd6f4
+        separator  #313244
         active_workspace   #f38ba8 #313244 #1e1e2e
         inactive_workspace #585b70 #313244 #ffffff
     }
     status_command i3blocks -c ~/.config/i3blocks/config
 }
 
-exec_always mako
-exec_always syncthing --no-browser
-
+# === Borders & Includes ===
+default_border pixel 2
 include /etc/sway/config.d/*
+

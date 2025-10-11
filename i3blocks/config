@@ -42,6 +42,11 @@ command=~/.config/i3blocks/scripts/powerprofile.sh
 interval=5
 color=#f7768e
 
+[bluetooth]
+command=~/.config/i3blocks/scripts/bluetooth.sh
+interval=5
+color=#89b4fa
+
 [power]
 command=~/.config/i3blocks/scripts/power.sh
 interval=5

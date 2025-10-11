@@ -32,7 +32,9 @@ sudo pacman -S --noconfirm \
   jq \
   power-profiles-daemon \
   python-gobject \
-  swayosd
+  swayosd \
+  copyq \
+  wtype
 
 # enable network manager service
 sudo systemctl enable --now NetworkManager

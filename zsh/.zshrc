@@ -98,3 +98,8 @@ export OZONE_PLATFORM=wayland
 export ELECTRON_OZONE_PLATFORM_HINT=wayland
 
 export XCOMPOSEFILE=~/.XCompose
+export GTK_IM_MODULE=xim
+export QT_IM_MODULE=xim
+export XMODIFIERS=@im=none
+
+. "$HOME/.local/bin/env"
