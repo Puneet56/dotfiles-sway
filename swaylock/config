@@ -1,0 +1,42 @@
+# ~/.config/swaylock/config
+# Tokyo Night inspired swaylock theme
+
+# Base color (background mask)
+color=1a1b26
+
+# Font
+font=JetBrains Mono
+
+# Indicator styling
+indicator-idle-visible
+indicator-radius=80
+indicator-thickness=10
+indicator-caps-lock
+indicator-key-hl-color=7aa2f7
+indicator-wrong-color=f7768e
+indicator-ver-color=9ece6a
+indicator-inside-color=24283b
+indicator-ring-color=7aa2f7
+indicator-ring-ver-color=9ece6a
+indicator-ring-wrong-color=f7768e
+indicator-text-color=c0caf5
+indicator-text-ver-color=9ece6a
+indicator-text-wrong-color=f7768e
+
+# Background
+screenshots
+effect-blur=10x5
+fade-in=0.25
+
+# Clock
+clock
+timestr=%H:%M:%S
+datestr=%a, %d %b %Y
+text-color=c0caf5
+
+# Grace period (optional: a few seconds before fully locking)
+grace=3
+grace-no-mouse
+
+# Other preferences
+show-failed-attempts

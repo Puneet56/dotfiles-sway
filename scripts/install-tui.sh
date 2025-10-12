@@ -56,4 +56,5 @@ chmod +x "$DESKTOP_FILE"
 
 if [ "$#" -ne 4 ]; then
   echo -e "You can now find $APP_NAME using the app launcher \n"
+  show-spinner.sh
 fi

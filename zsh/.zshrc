@@ -102,4 +102,6 @@ export GTK_IM_MODULE=xim
 export QT_IM_MODULE=xim
 export XMODIFIERS=@im=none
 
+add_to_path ~/software/goland/bin
+
 . "$HOME/.local/bin/env"

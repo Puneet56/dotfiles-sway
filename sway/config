@@ -8,10 +8,10 @@ output eDP-1 scale 1.7
 
 # === Idle, Lock & Power Management ===
 exec swayidle -w \
-    timeout 300 'swaylock -f -c 000000' \
-    timeout 600 'swaymsg "output * power off"' \
-    resume 'swaymsg "output * power on"' \
-    before-sleep 'swaylock -f -c 000000'
+    timeout 300 'swaylock -f' \
+    timeout 600 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock -f'
 
 
 # === Input Configuration ===
@@ -60,7 +60,7 @@ bindsym $mod+d exec $menu
 bindsym $mod+n exec $notes
 bindsym $mod+q kill
 bindsym $mod+Shift+l exec ~/scripts/powermenu.sh
-bindsym $mod+m exec ~/scripts/change-mouse-mode.sh
+bindsym $mod+m exec ~/dotfiles/sway/change-mouse-mode.sh
 bindsym $mod+Shift+e exec swaynag -t warning -m \
     'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' \
     -B 'Yes, exit sway' 'swaymsg exit'

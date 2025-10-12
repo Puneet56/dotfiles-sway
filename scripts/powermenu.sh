@@ -9,7 +9,7 @@ choice=$(echo -e "$options" | fuzzel --dmenu)
 # Perform the selected action
 case "$choice" in
 "🔒 Lock")
-  swaylock -f -c 000000
+  swaylock -f
   ;;
 "❌ Shutdown")
   systemctl poweroff
